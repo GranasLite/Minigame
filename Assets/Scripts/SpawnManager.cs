@@ -10,6 +10,7 @@ public class SpawnManager : MonoBehaviour
     private float startDelay = 2;
     private float spawnInterval = 1.5f;
     public PlayerController player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class SpawnManager : MonoBehaviour
     {
 
     }
+   
 
     void SpawnRandomAnimal()
     {
@@ -30,6 +32,8 @@ public class SpawnManager : MonoBehaviour
             Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
 
             Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);
+
+            //GetComponent<PointSystem>().Start();
         }
     }
 }
